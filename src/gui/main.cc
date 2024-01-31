@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include "segwayrmp/gui/segwayrmp_gui.h"
 
 #include <SDL/SDL.h>

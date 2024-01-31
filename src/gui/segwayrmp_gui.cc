@@ -3,8 +3,8 @@
 #include "ui_segwayrmp_gui.h"
 #include "segwayrmp/impl/rmp_ftd2xx.h"
 
-#include <QtCore/QtConcurrentRun>
-#include <QtGui/QErrorMessage>
+#include <QtConcurrent>
+#include <QErrorMessage>
 #include <QtCore/QTimer>
 
 #define JOY_DEADBAND 3200
@@ -151,7 +151,7 @@ void MainWindow::updateJoysticks() {
         ui->joy_list_cb->addItem("No Joysticks Detected.");
     }
     for (size_t i = 0; i < num_joysticks; ++i) {
-        ui->joy_list_cb->addItem(QString::fromAscii(SDL_JoystickName(i)));
+        ui->joy_list_cb->addItem(QString::fromLatin1(SDL_JoystickName(i)));
     }
 }
 
@@ -256,7 +256,7 @@ void MainWindow::onConnectClicked() {
             ui->rmp_type->setEnabled(false);
             ui->refresh_button->setEnabled(false);
         } catch (const std::exception &e) {
-            QString error = QString::fromAscii(e.what());
+            QString error = QString::fromLatin1(e.what());
             QErrorMessage error_msg;
             QString error_string = QString("Error connecting: %1").arg(error);
             qDebug() << "Error: " << error_string;

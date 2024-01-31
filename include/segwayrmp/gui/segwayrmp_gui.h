@@ -1,7 +1,7 @@
 #ifndef SEGWAYRMP_GUI_H
 #define SEGWAYRMP_GUI_H
 
-#include <QtGui/QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <QtCore/QMutex>
 
 #include <SDL/SDL.h>
