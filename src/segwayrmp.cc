@@ -13,7 +13,7 @@
 #endif
 
 inline void
-defaultSegwayStatusCallback(segwayrmp::SegwayStatus::Ptr &segway_status)
+defaultSegwayStatusCallback(segwayrmp::SegwayStatus::Ptr segway_status)
 {
   std::cout << "Segway Status:" << std::endl << std::endl
             << segway_status->str() << std::endl << std::endl;
