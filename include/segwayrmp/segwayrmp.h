@@ -727,7 +727,10 @@ public:
    */
   void
   setExceptionCallback(ExceptionCallback callback);
-private:
+  // Status Variables
+  bool connected_;
+  SegwayStatus::Ptr segway_status_;
+public:
   // Disable Copy Constructor
   void operator=(const SegwayRMP &);
   const SegwayRMP & operator=(SegwayRMP);
@@ -739,9 +742,7 @@ private:
   InterfaceType interface_type_;
   SegwayRMPType segway_rmp_type_;
 
-  // Status Variables
-  bool connected_;
-  SegwayStatus::Ptr segway_status_;
+  
 
   // Constants
   void SetConstantsBySegwayType_(SegwayRMPType &rmp_type);

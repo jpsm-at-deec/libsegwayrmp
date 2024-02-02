@@ -46,15 +46,46 @@ int run_segway(segwayrmp::InterfaceType interface_type, std::string configuratio
     }
     rmp.setStatusCallback(handleSegwayStatus);
     rmp.connect();
-    rmp.setOperationalMode(segwayrmp::balanced);
+    rmp.setOperationalMode(segwayrmp::tractor);
     while(true) {
       float given_x, given_y;
-      std::cout << "Type a number: ";
-      std::cin >> given_x;
-      std::cout << "Type another number: ";
-      std::cin >> given_y;
+      given_x = 0.1;
+      given_y = 0.1;
+      //std::cout << "Type a number: ";
+      //std::cin >> given_x;
+      //std::cout << "Type another number: ";
+      //std::cin >> given_y;
       rmp.move(given_x, given_y);
+
+      std::cout << "---------------------------------------- \n";
+
+      std::cout << "connected_: \n";
+      std::cout << rmp.connected_ << "\n";
+
+      std::cout << "ui_battery_voltage: \n";
+      std::cout << rmp.segway_status_->ui_battery_voltage << "\n";
+
+      std::cout << "commanded_velocity: \n";
+      std::cout << rmp.segway_status_->commanded_velocity << "\n";
+
+      std::cout << "commanded_yaw_rate: \n";
+      std::cout << rmp.segway_status_->commanded_yaw_rate << "\n";
+
+      std::cout << "integrated_left_wheel_position: \n";
+      std::cout << rmp.segway_status_->integrated_left_wheel_position << "\n";
       usleep(100000);
+      //Packet packet;
+      //try {
+      //  rmp.rmp_io_->getPacket(packet);
+      //  rmp.ProcessPacket_(packet);
+      //} catch (PacketRetrievalException &e) {
+      //  if (e.error_number() == 2) // Failed Checksum
+      //    this->error_("Checksum mismatch...");
+      //  else if (e.error_number() == 3) // No packet received
+      //    this->error_("No data from Segway...");
+      //  else
+      //    this->handle_exception_(e);
+      //}
     }
   } catch (std::exception &e) {
     std::cerr << "Error: " << e.what() << std::endl;
