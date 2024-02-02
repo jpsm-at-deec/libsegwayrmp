@@ -1,0 +1,541 @@
+\hypertarget{classsegwayrmp_1_1SegwayRMP}{}\doxysection{segwayrmp\+::Segway\+R\+MP Class Reference}
+\label{classsegwayrmp_1_1SegwayRMP}\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+
+
+{\ttfamily \#include $<$segwayrmp.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a7938edfc732e0035d3dd7480210c1a86}{Segway\+R\+MP}} (\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440}{Interface\+Type}} interface\+\_\+type=serial, \mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}{Segway\+R\+M\+P\+Type}} segway\+\_\+rmp\+\_\+type=rmp200)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a118f781c8195c6d483c054e75808d6fa}{configure\+Serial}} (std\+::string port, int baudrate=460800)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a5d38b3a2fece48164fd1d081b1564636}{configure\+U\+S\+B\+By\+Serial}} (std\+::string serial\+\_\+number, int baudrate=460800)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_ab6e4a97ef3d944e74062b651a27134b2}{configure\+U\+S\+B\+By\+Description}} (std\+::string description, int baudrate=460800)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_aa31b3d9ac0f6b322490404d6fb3e38b4}{configure\+U\+S\+B\+By\+Index}} (int device\+\_\+index, int baudrate=460800)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a86347c53ce64243e4b955ff893ae842f}{connect}} (bool reset\+\_\+integrators=true)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a7b733bacf96240bf518fe939571322b6}{shutdown}} ()
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_ad299e0d0670615d01e41be5c93c51d6c}{move\+Counts}} (short int linear\+\_\+counts, short int angular\+\_\+counts)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_aa78bcc5a29a026e98b9d7f1a48239e9b}{move}} (float linear\+\_\+velocity, float angular\+\_\+velocity)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a86bf57bdc6e624da36094cf160e04d64}{set\+Operational\+Mode}} (\mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}{Operational\+Mode}} operational\+\_\+mode)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a0634f902c7dfeb65eb51529b7d86211b}{set\+Controller\+Gain\+Schedule}} (\mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}{Controller\+Gain\+Schedule}} controller\+\_\+gain\+\_\+schedule)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a7209cd851a7d0a2a38474d7df4ca0ed7}{set\+Balance\+Mode\+Locking}} (bool state=true)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a3112de09df36fe6b5f9e629f936d555a}{reset\+All\+Integrators}} ()
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a8cdbf59c2e59a7fffd6435eca629c6ca}{set\+Max\+Velocity\+Scale\+Factor}} (double scalar=1.\+0)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a7e2ebc7e5785d5891695df31806243dd}{set\+Max\+Acceleration\+Scale\+Factor}} (double scalar=1.\+0)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_ae3f57a7e867fe09b354df22d3077a3de}{set\+Max\+Turn\+Scale\+Factor}} (double scalar=1.\+0)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a8883d1c80e19118e12b69283ad388ec7}{set\+Current\+Limit\+Scale\+Factor}} (double scalar=1.\+0)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_af1c5704932d52a8bf1a43f2b7e6a3d15}{set\+Status\+Callback}} (Segway\+Status\+Callback callback)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a37ad42355c0309f4c01938a1e424eb73}{set\+Log\+Msg\+Callback}} (std\+::string log\+\_\+level, Log\+Msg\+Callback callback)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_aaeb2cc3f46eb28e57556e99d0587a0dd}{set\+Timestamp\+Callback}} (Get\+Time\+Callback callback)
+\item 
+void \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP_a8add58767b01e4d7c0ea181d44a14a77}{set\+Exception\+Callback}} (Exception\+Callback callback)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for the Segway R\+MP. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a7938edfc732e0035d3dd7480210c1a86}\label{classsegwayrmp_1_1SegwayRMP_a7938edfc732e0035d3dd7480210c1a86}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!SegwayRMP@{SegwayRMP}}
+\index{SegwayRMP@{SegwayRMP}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{SegwayRMP()}{SegwayRMP()}}
+{\footnotesize\ttfamily Segway\+R\+M\+P\+::\+Segway\+R\+MP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440}{Interface\+Type}}}]{interface\+\_\+type = {\ttfamily serial},  }\item[{\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}{Segway\+R\+M\+P\+Type}}}]{segway\+\_\+rmp\+\_\+type = {\ttfamily rmp200} }\end{DoxyParamCaption})}
+
+Constructs the \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{Segway\+R\+MP}} object given the interface type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface\+\_\+type} & This must be can, usb, or serial. Default is usb. \\
+\hline
+{\em segway\+\_\+rmp\+\_\+type} & This can be rmp50, rmp100, rmp200, or rmp400. Default is rmp200. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a118f781c8195c6d483c054e75808d6fa}\label{classsegwayrmp_1_1SegwayRMP_a118f781c8195c6d483c054e75808d6fa}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!configureSerial@{configureSerial}}
+\index{configureSerial@{configureSerial}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{configureSerial()}{configureSerial()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::configure\+Serial (\begin{DoxyParamCaption}\item[{std\+::string}]{port,  }\item[{int}]{baudrate = {\ttfamily 460800} }\end{DoxyParamCaption})}
+
+Configures the serial interface, if the library is built with serial support, otherwise throws Configuration\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Defines which serial port to connect to in serial mode. \\
+\hline
+{\em baudrate} & Defines the speed of the serial port in baud\textquotesingle{}s. Defaults to 460800 (recommended). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_ab6e4a97ef3d944e74062b651a27134b2}\label{classsegwayrmp_1_1SegwayRMP_ab6e4a97ef3d944e74062b651a27134b2}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!configureUSBByDescription@{configureUSBByDescription}}
+\index{configureUSBByDescription@{configureUSBByDescription}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{configureUSBByDescription()}{configureUSBByDescription()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::configure\+U\+S\+B\+By\+Description (\begin{DoxyParamCaption}\item[{std\+::string}]{description,  }\item[{int}]{baudrate = {\ttfamily 460800} }\end{DoxyParamCaption})}
+
+Configures the F\+T\+D2\+XX usb interface, if the library is built with usb support, otherwise throws Configuration\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & Defines which usb port to connect to based on the devices description. \\
+\hline
+{\em baudrate} & Defines the speed of the usb port in baud\textquotesingle{}s. Defaults to 460800 (recommended). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_aa31b3d9ac0f6b322490404d6fb3e38b4}\label{classsegwayrmp_1_1SegwayRMP_aa31b3d9ac0f6b322490404d6fb3e38b4}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!configureUSBByIndex@{configureUSBByIndex}}
+\index{configureUSBByIndex@{configureUSBByIndex}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{configureUSBByIndex()}{configureUSBByIndex()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::configure\+U\+S\+B\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{device\+\_\+index,  }\item[{int}]{baudrate = {\ttfamily 460800} }\end{DoxyParamCaption})}
+
+Configures the F\+T\+D2\+XX usb interface, if the library is built with usb support, otherwise throws Configuration\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+index} & Defines which usb port to connect to based on the devices index. Note\+: This is indexed by all ftd2xx devices on the system. \\
+\hline
+{\em baudrate} & Defines the speed of the usb port in baud\textquotesingle{}s. Defaults to 460800 (recommended). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a5d38b3a2fece48164fd1d081b1564636}\label{classsegwayrmp_1_1SegwayRMP_a5d38b3a2fece48164fd1d081b1564636}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!configureUSBBySerial@{configureUSBBySerial}}
+\index{configureUSBBySerial@{configureUSBBySerial}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{configureUSBBySerial()}{configureUSBBySerial()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::configure\+U\+S\+B\+By\+Serial (\begin{DoxyParamCaption}\item[{std\+::string}]{serial\+\_\+number,  }\item[{int}]{baudrate = {\ttfamily 460800} }\end{DoxyParamCaption})}
+
+Configures the F\+T\+D2\+XX usb interface, if the library is built with usb support, otherwise throws Configuration\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+\_\+number} & Defines which usb port to connect to based on the devices serial number. \\
+\hline
+{\em baudrate} & Defines the speed of the usb port in baud\textquotesingle{}s. Defaults to 460800 (recommended). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a86347c53ce64243e4b955ff893ae842f}\label{classsegwayrmp_1_1SegwayRMP_a86347c53ce64243e4b955ff893ae842f}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!connect@{connect}}
+\index{connect@{connect}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::connect (\begin{DoxyParamCaption}\item[{bool}]{reset\+\_\+integrators = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Connects to the Segway. Ensure it has been configured first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+integrators} & If this is true, the integrators are reset. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_aa78bcc5a29a026e98b9d7f1a48239e9b}\label{classsegwayrmp_1_1SegwayRMP_aa78bcc5a29a026e98b9d7f1a48239e9b}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!move@{move}}
+\index{move@{move}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::move (\begin{DoxyParamCaption}\item[{float}]{linear\+\_\+velocity,  }\item[{float}]{angular\+\_\+velocity }\end{DoxyParamCaption})}
+
+This command moves the base at a given linear and angular velocity. This assumes the max velocity scalar is set to 1.\+0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear\+\_\+velocity} & Forward/\+Reverse desired velocity of the vehicle in m/s. \\
+\hline
+{\em angular\+\_\+velocity} & Desired angular velocity of the vehicle in degrees/s, positive to is left. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_ad299e0d0670615d01e41be5c93c51d6c}\label{classsegwayrmp_1_1SegwayRMP_ad299e0d0670615d01e41be5c93c51d6c}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!moveCounts@{moveCounts}}
+\index{moveCounts@{moveCounts}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{moveCounts()}{moveCounts()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::move\+Counts (\begin{DoxyParamCaption}\item[{short int}]{linear\+\_\+counts,  }\item[{short int}]{angular\+\_\+counts }\end{DoxyParamCaption})}
+
+This command moves the base at a given linear and angular count.
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear\+\_\+counts} & Forward/\+Reverse effort, in range \mbox{[}-\/1176, 1176\mbox{]}. Which maps approximately to \mbox{[}-\/8, 8\mbox{]} mph (assuming a max velocity scalar of 1.\+0) \\
+\hline
+{\em angular\+\_\+counts} & Angular effort, in range \mbox{[}-\/1024, 1024\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a3112de09df36fe6b5f9e629f936d555a}\label{classsegwayrmp_1_1SegwayRMP_a3112de09df36fe6b5f9e629f936d555a}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!resetAllIntegrators@{resetAllIntegrators}}
+\index{resetAllIntegrators@{resetAllIntegrators}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{resetAllIntegrators()}{resetAllIntegrators()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::reset\+All\+Integrators (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets all of the integrators.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Add individual functions for reseting each integrator. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a7209cd851a7d0a2a38474d7df4ca0ed7}\label{classsegwayrmp_1_1SegwayRMP_a7209cd851a7d0a2a38474d7df4ca0ed7}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setBalanceModeLocking@{setBalanceModeLocking}}
+\index{setBalanceModeLocking@{setBalanceModeLocking}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setBalanceModeLocking()}{setBalanceModeLocking()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Balance\+Mode\+Locking (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Locks or unlocks the balancing mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & This allows you to specify whether you want lock or unlock balancing mode. True for locked and False for unlocked. The default state is True. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a0634f902c7dfeb65eb51529b7d86211b}\label{classsegwayrmp_1_1SegwayRMP_a0634f902c7dfeb65eb51529b7d86211b}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setControllerGainSchedule@{setControllerGainSchedule}}
+\index{setControllerGainSchedule@{setControllerGainSchedule}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setControllerGainSchedule()}{setControllerGainSchedule()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Controller\+Gain\+Schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}{Controller\+Gain\+Schedule}}}]{controller\+\_\+gain\+\_\+schedule }\end{DoxyParamCaption})}
+
+Sets the controller gain schedule.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+gain\+\_\+schedule} & This sets the contoller gain schedule, possible values are light, tall, and heavy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a8883d1c80e19118e12b69283ad388ec7}\label{classsegwayrmp_1_1SegwayRMP_a8883d1c80e19118e12b69283ad388ec7}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setCurrentLimitScaleFactor@{setCurrentLimitScaleFactor}}
+\index{setCurrentLimitScaleFactor@{setCurrentLimitScaleFactor}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setCurrentLimitScaleFactor()}{setCurrentLimitScaleFactor()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Current\+Limit\+Scale\+Factor (\begin{DoxyParamCaption}\item[{double}]{scalar = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+Sets the Current Limit Scale Factor
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & This is a value between 0.\+0 and 1.\+0 which will set the current limit for the drive motors, limiting torque. Values larger than 1.\+0 will round down to 1.\+0 and values $<$ 0 will round up to 0.\+0. Parameter defaults to 1.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a8add58767b01e4d7c0ea181d44a14a77}\label{classsegwayrmp_1_1SegwayRMP_a8add58767b01e4d7c0ea181d44a14a77}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setExceptionCallback@{setExceptionCallback}}
+\index{setExceptionCallback@{setExceptionCallback}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setExceptionCallback()}{setExceptionCallback()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Exception\+Callback (\begin{DoxyParamCaption}\item[{Exception\+Callback}]{callback }\end{DoxyParamCaption})}
+
+Sets the Callback Function to be called on when an unhandled exception occurs.
+
+This allows you to catch and handle otherwise unhandled exceptions that might occur in an internal thread to the segwayrmp library.
+
+The provided function must follow this prototype\+: 
+\begin{DoxyPre}
+   void yourExceptionCallback(const std::exception\&)
+\end{DoxyPre}
+ Here is an example\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} yourTimestampCallback() \{
+       std::cerr << "SegwayRMP Unhandled Exception: " << error.what()
+                 << std::endl;
+   \}
+\end{DoxyPre}
+ And the resulting call to make it the callback\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   my\_segway\_rmp.setExceptionCallback(yourExceptionCallback);
+\end{DoxyPre}
+ Alternatively you can use a class method as a callback using boost\+::bind\+: 
+\begin{DoxyPre}
+   \#include <boost/bind.hpp>
+   \#include <ctime>\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   \#include "segwayrmp.h"\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   class MySegwayWrapper
+   \{
+   public:
+    MySegwayWrapper () \{
+      my\_segway\_rmp.setExceptionCallback(
+        boost::bind(\&MySegwayWrapper::handleException, this, \_1));
+    \}
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} handleException() \{
+       std::cerr << "SegwayRMP Unhandled Exception: " << error.what()
+                 << std::endl;
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   private:
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   \};
+\end{DoxyPre}
+ 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function pointer to the callback to handle otherwise unhandled exceptions that occur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a37ad42355c0309f4c01938a1e424eb73}\label{classsegwayrmp_1_1SegwayRMP_a37ad42355c0309f4c01938a1e424eb73}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setLogMsgCallback@{setLogMsgCallback}}
+\index{setLogMsgCallback@{setLogMsgCallback}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setLogMsgCallback()}{setLogMsgCallback()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Log\+Msg\+Callback (\begin{DoxyParamCaption}\item[{std\+::string}]{log\+\_\+level,  }\item[{Log\+Msg\+Callback}]{callback }\end{DoxyParamCaption})}
+
+Sets the Callback Function to be called when a log message occurs.
+
+This allows you to hook into the message reporting of the library and use your own logging facilities.
+
+The provided function must follow this prototype\+: 
+\begin{DoxyPre}
+   void yourLogMsgCallback(const std::string \&msg)
+\end{DoxyPre}
+ Here is an example (Using Debug in this case)\+: 
+\begin{DoxyPre}
+   void yourDebugMsgCallback(const std::string \&msg) \{
+       std::cerr << "SegwayRMP Debug: " << msg << std::endl;
+   \}
+\end{DoxyPre}
+ And the call to make it the callback (Again using Debug for example)\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   my\_segway\_rmp.setLogMsgCallback("debug", yourDebugMsgCallback);
+\end{DoxyPre}
+ Alternatively you can use a class method as a callback using boost\+::bind\+: 
+\begin{DoxyPre}
+   \#include <boost/bind.hpp>\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   \#include "segwayrmp.h"\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   class MySegwayWrapper
+   \{
+   public:
+    MySegwayWrapper () \{
+     my\_segway\_rmp.setLogMsgCallback("debug"
+       boost::bind(\&MySegwayWrapper::handleDebugMsg, this, \_1));
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    void handleDebugMsg(const std::string \&msg) \{
+      std::cerr << "SegwayRMP Debug: " << msg << std::endl;
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   private:
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   \};
+\end{DoxyPre}
+ 
+\begin{DoxyParams}{Parameters}
+{\em log\+\_\+level} & A std\+::string which indicates which log level to assign a callback to. Must be one of \char`\"{}debug\char`\"{}, \char`\"{}info\char`\"{}, or \char`\"{}error\char`\"{}. \\
+\hline
+{\em callback} & A Log\+Msg\+Callback type function which will be called when a log of level log\+\_\+level occurs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a7e2ebc7e5785d5891695df31806243dd}\label{classsegwayrmp_1_1SegwayRMP_a7e2ebc7e5785d5891695df31806243dd}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setMaxAccelerationScaleFactor@{setMaxAccelerationScaleFactor}}
+\index{setMaxAccelerationScaleFactor@{setMaxAccelerationScaleFactor}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setMaxAccelerationScaleFactor()}{setMaxAccelerationScaleFactor()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Max\+Acceleration\+Scale\+Factor (\begin{DoxyParamCaption}\item[{double}]{scalar = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+Sets the Max Acceleration Scale Factor
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & This is a value between 0.\+0 and 1.\+0 which will set the acceleration scale factor on the segway internally for all velocity commands. Values larger than 1.\+0 will round down to 1.\+0 and values $<$ 0 will round up to 0.\+0. Parameter defaults to 1.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_ae3f57a7e867fe09b354df22d3077a3de}\label{classsegwayrmp_1_1SegwayRMP_ae3f57a7e867fe09b354df22d3077a3de}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setMaxTurnScaleFactor@{setMaxTurnScaleFactor}}
+\index{setMaxTurnScaleFactor@{setMaxTurnScaleFactor}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setMaxTurnScaleFactor()}{setMaxTurnScaleFactor()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Max\+Turn\+Scale\+Factor (\begin{DoxyParamCaption}\item[{double}]{scalar = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+Sets the Max Turn Scale Factor
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & This is a value between 0.\+0 and 1.\+0 which will set the scale factor on the segway internally for all turn commands. Values larger than 1.\+0 will round down to 1.\+0 and values $<$ 0 will round up to 0.\+0. Parameter defaults to 1.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a8cdbf59c2e59a7fffd6435eca629c6ca}\label{classsegwayrmp_1_1SegwayRMP_a8cdbf59c2e59a7fffd6435eca629c6ca}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setMaxVelocityScaleFactor@{setMaxVelocityScaleFactor}}
+\index{setMaxVelocityScaleFactor@{setMaxVelocityScaleFactor}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setMaxVelocityScaleFactor()}{setMaxVelocityScaleFactor()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Max\+Velocity\+Scale\+Factor (\begin{DoxyParamCaption}\item[{double}]{scalar = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+Sets the Max Velocity Scale Factor
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & This is a value between 0.\+0 and 1.\+0 which will set the scale factor on the segway internally for all velocity commands. Values larger than 1.\+0 will round down to 1.\+0 and values $<$ 0 will round up to 0.\+0. Parameter defaults to 1.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a86bf57bdc6e624da36094cf160e04d64}\label{classsegwayrmp_1_1SegwayRMP_a86bf57bdc6e624da36094cf160e04d64}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setOperationalMode@{setOperationalMode}}
+\index{setOperationalMode@{setOperationalMode}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setOperationalMode()}{setOperationalMode()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Operational\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}{Operational\+Mode}}}]{operational\+\_\+mode }\end{DoxyParamCaption})}
+
+Sets the operational mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operational\+\_\+mode} & This must be disabled, tractor, or balanced. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_af1c5704932d52a8bf1a43f2b7e6a3d15}\label{classsegwayrmp_1_1SegwayRMP_af1c5704932d52a8bf1a43f2b7e6a3d15}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setStatusCallback@{setStatusCallback}}
+\index{setStatusCallback@{setStatusCallback}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setStatusCallback()}{setStatusCallback()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Status\+Callback (\begin{DoxyParamCaption}\item[{Segway\+Status\+Callback}]{callback }\end{DoxyParamCaption})}
+
+Sets the Callback Function to be called on new Segway Status Updates.
+
+The provided function must follow this prototype\+: 
+\begin{DoxyPre}
+   void yourSegwayStatusCallback(segwayrmp::SegwayStatus \&segway\_status)
+\end{DoxyPre}
+ Here is an example\+: 
+\begin{DoxyPre}
+   void handleSegwayStatus(segwayrmp::SegwayStatus \&ss) \{
+       std::cout << ss.str() << std::endl << std::endl;
+   \}
+\end{DoxyPre}
+ And the resulting call to make it the callback\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   my\_segway\_rmp.setStatusCallback(handleSegwayStatus);
+\end{DoxyPre}
+ Alternatively you can use a class method as a callback using boost\+::bind\+: 
+\begin{DoxyPre}
+   \#include <boost/bind.hpp>\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   \#include "segwayrmp.h"\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   class MySegwayWrapper
+   \{
+   public:
+    MySegwayWrapper () \{
+     my\_segway\_rmp.setStatusCallback(
+       boost::bind(\&MySegwayWrapper::handleSegwayStatus, this, \_1));
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    void handleSegwayStatus(segwayrmp::SegwayStatus \&ss) \{
+      std::cout << ss.str() << std::endl << std::endl;
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   private:
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   \};
+\end{DoxyPre}
+ 
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+callback} & A function pointer to the callback to handle new \mbox{\hyperlink{classsegwayrmp_1_1SegwayStatus}{Segway\+Status}} updates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Make all the callbacks capable of taking class methods \end{DoxyRefDesc}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_aaeb2cc3f46eb28e57556e99d0587a0dd}\label{classsegwayrmp_1_1SegwayRMP_aaeb2cc3f46eb28e57556e99d0587a0dd}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!setTimestampCallback@{setTimestampCallback}}
+\index{setTimestampCallback@{setTimestampCallback}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{setTimestampCallback()}{setTimestampCallback()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::set\+Timestamp\+Callback (\begin{DoxyParamCaption}\item[{Get\+Time\+Callback}]{callback }\end{DoxyParamCaption})}
+
+Sets the Callback Function to be called on when a timestamp is made.
+
+This allows you to provide your own time stamp method for time stamping the segway data. You must return a Segway\+Time\+Struct, but you can return an empty time struct and manually store your time stamp and use your timestamp when processing the segway status callback.
+
+The provided function must follow this prototype\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} yourTimestampCallback()
+\end{DoxyPre}
+ Here is an example\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} yourTimestampCallback() \{
+       \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} st;
+       timespec start;
+       clock\_gettime(CLOCK\_REALTIME, \&start);
+       st.sec  = start.tv\_sec;
+       st.nsec = start.tv\_nsec;
+       return st;
+   \}
+\end{DoxyPre}
+ And the resulting call to make it the callback\+: 
+\begin{DoxyPre}
+   \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   my\_segway\_rmp.setTimestampCallback(yourTimestampCallback);
+\end{DoxyPre}
+ Alternatively you can use a class method as a callback using boost\+::bind\+: 
+\begin{DoxyPre}
+   \#include <boost/bind.hpp>
+   \#include <ctime>\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   \#include "segwayrmp.h"\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   class MySegwayWrapper
+   \{
+   public:
+    MySegwayWrapper () \{
+      my\_segway\_rmp.setTimestampCallback(
+        boost::bind(\&MySegwayWrapper::handleTimestamp, this, \_1));
+    \}
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} handleTimestamp() \{
+       \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{SegwayTime}} st;
+       timespec start;
+       clock\_gettime(CLOCK\_REALTIME, \&start);
+       st.sec  = start.tv\_sec;
+       st.nsec = start.tv\_nsec;
+       return st;
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   private:
+    \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp::SegwayRMP}} my\_segway\_rmp;
+   \};
+\end{DoxyPre}
+ 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function pointer to the callback to handle Timestamp creation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsegwayrmp_1_1SegwayRMP_a7b733bacf96240bf518fe939571322b6}\label{classsegwayrmp_1_1SegwayRMP_a7b733bacf96240bf518fe939571322b6}} 
+\index{segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!segwayrmp::SegwayRMP@{segwayrmp::SegwayRMP}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily void Segway\+R\+M\+P\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sends a shutdown command to the R\+MP that immediately shuts it down. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/segwayrmp/\mbox{\hyperlink{segwayrmp_8h}{segwayrmp.\+h}}\item 
+src/segwayrmp.\+cc\end{DoxyCompactItemize}

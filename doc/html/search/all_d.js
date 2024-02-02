@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['segwayrmp_45',['segwayrmp',['../index.html',1,'']]],
+  ['sec_46',['sec',['../classsegwayrmp_1_1SegwayTime.html#af462f2ec6e9163611568e7cab84021d1',1,'segwayrmp::SegwayTime']]],
+  ['segwayrmp_47',['SegwayRMP',['../classsegwayrmp_1_1SegwayRMP.html',1,'segwayrmp::SegwayRMP'],['../classsegwayrmp_1_1SegwayRMP.html#a7938edfc732e0035d3dd7480210c1a86',1,'segwayrmp::SegwayRMP::SegwayRMP()']]],
+  ['segwayrmp_2eh_48',['segwayrmp.h',['../segwayrmp_8h.html',1,'']]],
+  ['segwayrmptype_49',['SegwayRMPType',['../segwayrmp_8h.html#ab3ed045686afaaed95bcdaa1915aaa36',1,'segwayrmp']]],
+  ['segwaystatus_50',['SegwayStatus',['../classsegwayrmp_1_1SegwayStatus.html',1,'segwayrmp']]],
+  ['segwaytime_51',['SegwayTime',['../classsegwayrmp_1_1SegwayTime.html',1,'segwayrmp']]],
+  ['serial_52',['serial',['../segwayrmp_8h.html#a16ff523927a974242583079173f25440ad0868d398ac2eaca35575f8a1503f703',1,'segwayrmp']]],
+  ['servo_5fframes_53',['servo_frames',['../classsegwayrmp_1_1SegwayStatus.html#a50e889caa89e0bc9c62bf4b66cfe80b4',1,'segwayrmp::SegwayStatus']]],
+  ['setbalancemodelocking_54',['setBalanceModeLocking',['../classsegwayrmp_1_1SegwayRMP.html#a7209cd851a7d0a2a38474d7df4ca0ed7',1,'segwayrmp::SegwayRMP']]],
+  ['setcontrollergainschedule_55',['setControllerGainSchedule',['../classsegwayrmp_1_1SegwayRMP.html#a0634f902c7dfeb65eb51529b7d86211b',1,'segwayrmp::SegwayRMP']]],
+  ['setcurrentlimitscalefactor_56',['setCurrentLimitScaleFactor',['../classsegwayrmp_1_1SegwayRMP.html#a8883d1c80e19118e12b69283ad388ec7',1,'segwayrmp::SegwayRMP']]],
+  ['setexceptioncallback_57',['setExceptionCallback',['../classsegwayrmp_1_1SegwayRMP.html#a8add58767b01e4d7c0ea181d44a14a77',1,'segwayrmp::SegwayRMP']]],
+  ['setlogmsgcallback_58',['setLogMsgCallback',['../classsegwayrmp_1_1SegwayRMP.html#a37ad42355c0309f4c01938a1e424eb73',1,'segwayrmp::SegwayRMP']]],
+  ['setmaxaccelerationscalefactor_59',['setMaxAccelerationScaleFactor',['../classsegwayrmp_1_1SegwayRMP.html#a7e2ebc7e5785d5891695df31806243dd',1,'segwayrmp::SegwayRMP']]],
+  ['setmaxturnscalefactor_60',['setMaxTurnScaleFactor',['../classsegwayrmp_1_1SegwayRMP.html#ae3f57a7e867fe09b354df22d3077a3de',1,'segwayrmp::SegwayRMP']]],
+  ['setmaxvelocityscalefactor_61',['setMaxVelocityScaleFactor',['../classsegwayrmp_1_1SegwayRMP.html#a8cdbf59c2e59a7fffd6435eca629c6ca',1,'segwayrmp::SegwayRMP']]],
+  ['setoperationalmode_62',['setOperationalMode',['../classsegwayrmp_1_1SegwayRMP.html#a86bf57bdc6e624da36094cf160e04d64',1,'segwayrmp::SegwayRMP']]],
+  ['setstatuscallback_63',['setStatusCallback',['../classsegwayrmp_1_1SegwayRMP.html#af1c5704932d52a8bf1a43f2b7e6a3d15',1,'segwayrmp::SegwayRMP']]],
+  ['settimestampcallback_64',['setTimestampCallback',['../classsegwayrmp_1_1SegwayRMP.html#aaeb2cc3f46eb28e57556e99d0587a0dd',1,'segwayrmp::SegwayRMP']]],
+  ['shutdown_65',['shutdown',['../classsegwayrmp_1_1SegwayRMP.html#a7b733bacf96240bf518fe939571322b6',1,'segwayrmp::SegwayRMP']]]
+];

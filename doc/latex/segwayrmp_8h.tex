@@ -1,0 +1,267 @@
+\hypertarget{segwayrmp_8h}{}\doxysection{include/segwayrmp/segwayrmp.h File Reference}
+\label{segwayrmp_8h}\index{include/segwayrmp/segwayrmp.h@{include/segwayrmp/segwayrmp.h}}
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$boost/function.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/thread.\+hpp$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for segwayrmp.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{segwayrmp_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsegwayrmp_1_1SegwayTime}{segwayrmp\+::\+Segway\+Time}}
+\item 
+class \mbox{\hyperlink{classsegwayrmp_1_1FiniteConcurrentSharedQueue}{segwayrmp\+::\+Finite\+Concurrent\+Shared\+Queue$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classsegwayrmp_1_1SegwayStatus}{segwayrmp\+::\+Segway\+Status}}
+\item 
+class \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{segwayrmp\+::\+Segway\+R\+MP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON}(Class\+Name,  Prefix,  Message)
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a37e5337a040b5a3b38c6f7e719b3ad14}\label{segwayrmp_8h_a37e5337a040b5a3b38c6f7e719b3ad14}} 
+\#define {\bfseries R\+M\+P\+\_\+\+T\+H\+R\+OW}(Exception\+Class)~throw Exception\+Class(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a1309afc0cbf82934a38c8f4c8177eede}\label{segwayrmp_8h_a1309afc0cbf82934a38c8f4c8177eede}} 
+\#define {\bfseries R\+M\+P\+\_\+\+T\+H\+R\+O\+W\+\_\+\+M\+SG}(Exception\+Class,  Message)~throw Exception\+Class(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, (Message) )
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a365b5bf1b04fd9aed6d17e02f10155a4}\label{segwayrmp_8h_a365b5bf1b04fd9aed6d17e02f10155a4}} 
+\#define {\bfseries R\+M\+P\+\_\+\+T\+H\+R\+O\+W\+\_\+\+M\+S\+G\+\_\+\+A\+N\+D\+\_\+\+ID}(Exception\+Class,  Message,  Id)~throw Exception\+Class(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, (Message), (Id) )
+\item 
+\#define \mbox{\hyperlink{segwayrmp_8h_a905729d264a36115e15389ec0dd3bbb8}{M\+A\+X\+\_\+\+S\+E\+G\+W\+A\+Y\+S\+T\+A\+T\+U\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_af23060d111f05de8e8de331ef4e1f8ad}\label{segwayrmp_8h_af23060d111f05de8e8de331ef4e1f8ad}} 
+typedef boost\+::function$<$ void(Segway\+Status\+::\+Ptr)$>$ {\bfseries segwayrmp\+::\+Segway\+Status\+Callback}
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_ab3ff04406148e532d9eec6af0297194d}\label{segwayrmp_8h_ab3ff04406148e532d9eec6af0297194d}} 
+typedef boost\+::function$<$ Segway\+Time(void)$>$ {\bfseries segwayrmp\+::\+Get\+Time\+Callback}
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_afc26f5b7900c6d73121d7532cfc8d375}\label{segwayrmp_8h_afc26f5b7900c6d73121d7532cfc8d375}} 
+typedef boost\+::function$<$ void(const std\+::exception \&)$>$ {\bfseries segwayrmp\+::\+Exception\+Callback}
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a66b419edfc0e846fdd40e9a6fda2ab6e}\label{segwayrmp_8h_a66b419edfc0e846fdd40e9a6fda2ab6e}} 
+typedef boost\+::function$<$ void(const std\+::string \&)$>$ {\bfseries segwayrmp\+::\+Log\+Msg\+Callback}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440}{segwayrmp\+::\+Interface\+Type}} \{ \newline
+\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440a798fc885baa5f3e93d4905e26d2b8316}{segwayrmp\+::can}} = 0, 
+\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440a99a52e21088af37e71c92c33f6789745}{segwayrmp\+::usb}} = 1, 
+\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440ad0868d398ac2eaca35575f8a1503f703}{segwayrmp\+::serial}} = 2, 
+\mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440ae1172011a5d000123eecc549cf29f214}{segwayrmp\+::ethernet}} = 3, 
+\newline
+{\bfseries no\+\_\+interface} = -\/1
+ \}
+\item 
+enum \mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}{segwayrmp\+::\+Segway\+R\+M\+P\+Type}} \{ \newline
+\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36ab2bb900f590dcc57c8640f6cf44aeabd}{segwayrmp\+::rmp50}} = 0, 
+\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a768ce5967edd9d5f2c00f034860db97b}{segwayrmp\+::rmp100}} = 1, 
+\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a870d115a6123f8bf17fc3d48a223da53}{segwayrmp\+::rmp200}} = 2, 
+\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a61df4c04edb33d51d9e4b008e73ca3f3}{segwayrmp\+::rmp400}} = 3, 
+\newline
+\mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a0242b35cd9aa104dac325e78b20af1ca}{segwayrmp\+::rmpx440}} = 4
+ \}
+\item 
+enum \mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}{segwayrmp\+::\+Operational\+Mode}} \{ \mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0a42b0ce48761e0169f06cd870f587276f}{segwayrmp\+::disabled}} = 0, 
+\mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0aaecc7036c1b94f2eca9b50fb2edf0aff}{segwayrmp\+::tractor}} = 1, 
+\mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0acbd19c158cc31a8dff9a997dd39b802e}{segwayrmp\+::balanced}} = 2, 
+\mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0ace8fcaa79325be2ac4790b0551c9b63f}{segwayrmp\+::power\+\_\+down}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}{segwayrmp\+::\+Controller\+Gain\+Schedule}} \{ \mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35ac1381e6f1d84a0e20d394a73ad789d5f}{segwayrmp\+::light}} = 0, 
+\mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35a268775c37be2b41871741fd24eebd8e4}{segwayrmp\+::tall}} = 1, 
+\mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35aa28e985bc214a01dd088bbe73a8358c5}{segwayrmp\+::heavy}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a1035a4a4d8cba9bf5c4ba97b9c4d86ec}\label{segwayrmp_8h_a1035a4a4d8cba9bf5c4ba97b9c4d86ec}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (No\+High\+Performance\+Timers\+Exception, \char`\"{}\char`\"{}, \char`\"{}This system does not \char`\"{} \char`\"{}appear to have a High Precision Event Timer (H\+P\+ET) device.\char`\"{})
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a1d003deb5b851fa5fdd39b8fd88e9181}\label{segwayrmp_8h_a1d003deb5b851fa5fdd39b8fd88e9181}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (Connection\+Failed\+Exception, \char`\"{}Error connecting to the \char`\"{} \char`\"{}Segway\+R\+M\+P\+: \char`\"{}, \char`\"{}Unspecified\char`\"{})
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a0aaf08e7e8b620db3ca522f23e121dc2}\label{segwayrmp_8h_a0aaf08e7e8b620db3ca522f23e121dc2}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (Read\+Failed\+Exception, \char`\"{}Error reading from the Segway\+R\+M\+P\+: \char`\"{}, \char`\"{}Unspecified\char`\"{})
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_ace1f32c3cd388878c5d92ac16751ea35}\label{segwayrmp_8h_ace1f32c3cd388878c5d92ac16751ea35}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (Write\+Failed\+Exception, \char`\"{}Error writing to the Segway\+R\+M\+P\+: \char`\"{}, \char`\"{}Unspecified\char`\"{})
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_aca068870ff8cefec130d3ad67139e61b}\label{segwayrmp_8h_aca068870ff8cefec130d3ad67139e61b}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (Move\+Failed\+Exception, \char`\"{}Error moving the Segway\+R\+M\+P\+: \char`\"{}, \char`\"{}Unspecified\char`\"{})
+\item 
+\mbox{\Hypertarget{segwayrmp_8h_a3d613ca1c8d02a0fa54ac5d2460cecf2}\label{segwayrmp_8h_a3d613ca1c8d02a0fa54ac5d2460cecf2}} 
+{\bfseries segwayrmp\+::\+D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} (Configuration\+Exception, \char`\"{}Error configuring the Segway\+R\+M\+P\+: \char`\"{}, \char`\"{}Unspecified\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+William Woodall \href{mailto:wjwwood@gmail.com}{\texttt{ wjwwood@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{segwayrmp_8h_LICENSE}{}\doxysubsection{L\+I\+C\+E\+N\+SE}\label{segwayrmp_8h_LICENSE}
+The B\+SD License
+
+Copyright (c) 2012 William Woodall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE.\hypertarget{segwayrmp_8h_DESCRIPTION}{}\doxysubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{segwayrmp_8h_DESCRIPTION}
+This provides a cross platform interface for the Segway R\+MP\textquotesingle{}s.
+
+This library depends on Boost\+: \href{http://www.boost.org/}{\texttt{ http\+://www.\+boost.\+org/}} and possibly depends on a Serial library\+: \href{https://github.com/wjwwood/serial}{\texttt{ https\+://github.\+com/wjwwood/serial}} depending on the library build configuration. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{segwayrmp_8h_a6c0e0d2885d6a67d805dec2792ada6ff}\label{segwayrmp_8h_a6c0e0d2885d6a67d805dec2792ada6ff}} 
+\index{segwayrmp.h@{segwayrmp.h}!DEFINE\_EXCEPTION@{DEFINE\_EXCEPTION}}
+\index{DEFINE\_EXCEPTION@{DEFINE\_EXCEPTION}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_EXCEPTION}{DEFINE\_EXCEPTION}}
+{\footnotesize\ttfamily \#define D\+E\+F\+I\+N\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{Class\+Name,  }\item[{}]{Prefix,  }\item[{}]{Message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{class }ClassName : \textcolor{keyword}{public} std::exception \{ \(\backslash\)}
+\DoxyCodeLine{    void operator=(\textcolor{keyword}{const} ClassName \&); \(\backslash\)}
+\DoxyCodeLine{    const ClassName \& operator=( ClassName ); \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{char} * what\_; \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{int} id\_; \(\backslash\)}
+\DoxyCodeLine{  public: \(\backslash\)}
+\DoxyCodeLine{    ClassName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * file, \textcolor{keyword}{const} \textcolor{keywordtype}{int} ln, \(\backslash\)}
+\DoxyCodeLine{              \textcolor{keyword}{const} \textcolor{keywordtype}{char} * msg = Message, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = -\/1) : id\_(id) \{ \(\backslash\)}
+\DoxyCodeLine{      std::stringstream ss; \(\backslash\)}
+\DoxyCodeLine{      ss << \#ClassName \textcolor{stringliteral}{" occurred at line "} << ln \(\backslash\)}
+\DoxyCodeLine{         << \textcolor{stringliteral}{" of `"} << file << \textcolor{stringliteral}{"`: "} << Prefix << msg; \(\backslash\)}
+\DoxyCodeLine{      what\_ = ss.str().c\_str(); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    virtual \textcolor{keyword}{const} \textcolor{keywordtype}{char}* what () \textcolor{keyword}{const} throw () \{ \textcolor{keywordflow}{return} what\_; \} \(\backslash\)}
+\DoxyCodeLine{    const \textcolor{keywordtype}{int} error\_number() \{ \textcolor{keywordflow}{return} this-\/>id\_; \} \(\backslash\)}
+\DoxyCodeLine{  \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{segwayrmp_8h_a905729d264a36115e15389ec0dd3bbb8}\label{segwayrmp_8h_a905729d264a36115e15389ec0dd3bbb8}} 
+\index{segwayrmp.h@{segwayrmp.h}!MAX\_SEGWAYSTATUS\_QUEUE\_SIZE@{MAX\_SEGWAYSTATUS\_QUEUE\_SIZE}}
+\index{MAX\_SEGWAYSTATUS\_QUEUE\_SIZE@{MAX\_SEGWAYSTATUS\_QUEUE\_SIZE}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SEGWAYSTATUS\_QUEUE\_SIZE}{MAX\_SEGWAYSTATUS\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+S\+E\+G\+W\+A\+Y\+S\+T\+A\+T\+U\+S\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE~100}
+
+Defines the number of buffered Segway\+Status structures to be held. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}\label{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}} 
+\index{segwayrmp.h@{segwayrmp.h}!ControllerGainSchedule@{ControllerGainSchedule}}
+\index{ControllerGainSchedule@{ControllerGainSchedule}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{ControllerGainSchedule}{ControllerGainSchedule}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35}{segwayrmp\+::\+Controller\+Gain\+Schedule}}}
+
+Defines the controller gain schedule options for the Segway vehicle. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{light@{light}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!light@{light}}}\mbox{\Hypertarget{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35ac1381e6f1d84a0e20d394a73ad789d5f}\label{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35ac1381e6f1d84a0e20d394a73ad789d5f}} 
+light&For relatively small weights (20 kg) near the platform \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tall@{tall}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!tall@{tall}}}\mbox{\Hypertarget{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35a268775c37be2b41871741fd24eebd8e4}\label{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35a268775c37be2b41871741fd24eebd8e4}} 
+tall&For relatively small weights (20 kg) spread out vertically on the platform \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{heavy@{heavy}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!heavy@{heavy}}}\mbox{\Hypertarget{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35aa28e985bc214a01dd088bbe73a8358c5}\label{segwayrmp_8h_a545e1981a774dfc8bd48a51c62993c35aa28e985bc214a01dd088bbe73a8358c5}} 
+heavy&For heavy weights (40 kg) near the platform \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{segwayrmp_8h_a16ff523927a974242583079173f25440}\label{segwayrmp_8h_a16ff523927a974242583079173f25440}} 
+\index{segwayrmp.h@{segwayrmp.h}!InterfaceType@{InterfaceType}}
+\index{InterfaceType@{InterfaceType}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{InterfaceType}{InterfaceType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{segwayrmp_8h_a16ff523927a974242583079173f25440}{segwayrmp\+::\+Interface\+Type}}}
+
+Defines the possible modes of communication for the Segway Interface. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{can@{can}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!can@{can}}}\mbox{\Hypertarget{segwayrmp_8h_a16ff523927a974242583079173f25440a798fc885baa5f3e93d4905e26d2b8316}\label{segwayrmp_8h_a16ff523927a974242583079173f25440a798fc885baa5f3e93d4905e26d2b8316}} 
+can&This method is unsupported currently. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{usb@{usb}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!usb@{usb}}}\mbox{\Hypertarget{segwayrmp_8h_a16ff523927a974242583079173f25440a99a52e21088af37e71c92c33f6789745}\label{segwayrmp_8h_a16ff523927a974242583079173f25440a99a52e21088af37e71c92c33f6789745}} 
+usb&This method communicates to the Segway via usb using the F\+T\+D2\+XX library. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{serial@{serial}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!serial@{serial}}}\mbox{\Hypertarget{segwayrmp_8h_a16ff523927a974242583079173f25440ad0868d398ac2eaca35575f8a1503f703}\label{segwayrmp_8h_a16ff523927a974242583079173f25440ad0868d398ac2eaca35575f8a1503f703}} 
+serial&This method communicates to the Segway via a virtual serial port. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ethernet@{ethernet}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!ethernet@{ethernet}}}\mbox{\Hypertarget{segwayrmp_8h_a16ff523927a974242583079173f25440ae1172011a5d000123eecc549cf29f214}\label{segwayrmp_8h_a16ff523927a974242583079173f25440ae1172011a5d000123eecc549cf29f214}} 
+ethernet&This method communicates to the Segway via a U\+D\+P/\+IP ethernet interface. Note\+: This is only allowed with the rmpx440 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}\label{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}} 
+\index{segwayrmp.h@{segwayrmp.h}!OperationalMode@{OperationalMode}}
+\index{OperationalMode@{OperationalMode}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{OperationalMode}{OperationalMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0}{segwayrmp\+::\+Operational\+Mode}}}
+
+Defines the operational modes of the Segway vehicle. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{disabled@{disabled}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!disabled@{disabled}}}\mbox{\Hypertarget{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0a42b0ce48761e0169f06cd870f587276f}\label{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0a42b0ce48761e0169f06cd870f587276f}} 
+disabled&This means the Segway has not been set to a mode yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tractor@{tractor}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!tractor@{tractor}}}\mbox{\Hypertarget{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0aaecc7036c1b94f2eca9b50fb2edf0aff}\label{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0aaecc7036c1b94f2eca9b50fb2edf0aff}} 
+tractor&This mode means the Segway will move without balancing, i.\+e. it has a caster. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{balanced@{balanced}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!balanced@{balanced}}}\mbox{\Hypertarget{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0acbd19c158cc31a8dff9a997dd39b802e}\label{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0acbd19c158cc31a8dff9a997dd39b802e}} 
+balanced&This mode means the Segway will balance on its two drive wheels. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{power\_down@{power\_down}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!power\_down@{power\_down}}}\mbox{\Hypertarget{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0ace8fcaa79325be2ac4790b0551c9b63f}\label{segwayrmp_8h_a748b534937bbf460be38e9cd93632ef0ace8fcaa79325be2ac4790b0551c9b63f}} 
+power\+\_\+down&This mode means the Segway will power down. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}} 
+\index{segwayrmp.h@{segwayrmp.h}!SegwayRMPType@{SegwayRMPType}}
+\index{SegwayRMPType@{SegwayRMPType}!segwayrmp.h@{segwayrmp.h}}
+\doxysubsubsection{\texorpdfstring{SegwayRMPType}{SegwayRMPType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36}{segwayrmp\+::\+Segway\+R\+M\+P\+Type}}}
+
+Defines the type of Segway R\+MP you are using. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rmp50@{rmp50}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!rmp50@{rmp50}}}\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36ab2bb900f590dcc57c8640f6cf44aeabd}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36ab2bb900f590dcc57c8640f6cf44aeabd}} 
+rmp50&This indicates you have an R\+M\+P50 vehicle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rmp100@{rmp100}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!rmp100@{rmp100}}}\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a768ce5967edd9d5f2c00f034860db97b}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a768ce5967edd9d5f2c00f034860db97b}} 
+rmp100&This indicates you have an R\+M\+P100 vehicle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rmp200@{rmp200}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!rmp200@{rmp200}}}\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a870d115a6123f8bf17fc3d48a223da53}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a870d115a6123f8bf17fc3d48a223da53}} 
+rmp200&This indicates you have an R\+M\+P200 vehicle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rmp400@{rmp400}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!rmp400@{rmp400}}}\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a61df4c04edb33d51d9e4b008e73ca3f3}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a61df4c04edb33d51d9e4b008e73ca3f3}} 
+rmp400&You still need to run two instances of \mbox{\hyperlink{classsegwayrmp_1_1SegwayRMP}{Segway\+R\+MP}}, this is the same as setting Segway\+R\+M\+P\+Type as rmp200. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rmpx440@{rmpx440}!segwayrmp.h@{segwayrmp.h}}\index{segwayrmp.h@{segwayrmp.h}!rmpx440@{rmpx440}}}\mbox{\Hypertarget{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a0242b35cd9aa104dac325e78b20af1ca}\label{segwayrmp_8h_ab3ed045686afaaed95bcdaa1915aaa36a0242b35cd9aa104dac325e78b20af1ca}} 
+rmpx440&This is the new rmp400, dubbed the rmpx440, which allows ethernet control. \\
+\hline
+
+\end{DoxyEnumFields}
