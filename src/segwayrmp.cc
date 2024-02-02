@@ -38,7 +38,8 @@ inline void defaultErrorMsgCallback(const std::string &msg)
 // http://www.ros.org/doc/api/rostime/html/time_8cpp_source.html
 inline segwayrmp::SegwayTime defaultTimestampCallback()
 #ifndef WIN32
-throw(segwayrmp::NoHighPerformanceTimersException)
+//throw(segwayrmp::NoHighPerformanceTimersException)
+noexcept
 #endif
 {
   segwayrmp::SegwayTime st;
