@@ -246,10 +246,10 @@ void MainWindow::onConnectClicked() {
             } else if (this->interface_type_ == segwayrmp::serial) {
                 rmp_->configureSerial(ui->connection_id->currentText().toStdString());
             }
-            rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", placeholders::_1));
-            rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", placeholders::_1));
-            rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", placeholders::_1));
-            rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, placeholders::_1));
+            rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", std::placeholders::_1));
+            rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", std::placeholders::_1));
+            rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", std::placeholders::_1));
+            rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, std::placeholders::_1));
             rmp_->connect();
             this->connected_ = true;
             ui->connect_button->setText("Disconnect");
