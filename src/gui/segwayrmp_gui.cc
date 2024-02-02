@@ -7,6 +7,8 @@
 #include <QErrorMessage>
 #include <QtCore/QTimer>
 
+#include <functional> 
+
 #define JOY_DEADBAND 3200
 #define JOY_MAX_VALUE 32768
 
@@ -244,10 +246,10 @@ void MainWindow::onConnectClicked() {
             } else if (this->interface_type_ == segwayrmp::serial) {
                 rmp_->configureSerial(ui->connection_id->currentText().toStdString());
             }
-            rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", _1));
-            rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", _1));
-            rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", _1));
-            rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, _1));
+            rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", placeholders::_1));
+            rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", placeholders::_1));
+            rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", placeholders::_1));
+            rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, placeholders::_1));
             rmp_->connect();
             this->connected_ = true;
             ui->connect_button->setText("Disconnect");
