@@ -6,8 +6,10 @@
 #include <QtConcurrent>
 #include <QErrorMessage>
 #include <QtCore/QTimer>
+#include <QString>
+#define BOOST_BIND_NO_PLACEHOLDERS
 
-#include <functional> 
+
 
 #define JOY_DEADBAND 3200
 #define JOY_MAX_VALUE 32768
@@ -228,7 +230,7 @@ void MainWindow::handleSegwayLog(QString log) {
     ui->statusbar->showMessage(log, 3000);
 }
 
-void MainWindow::onSegwayStatus(segwayrmp::SegwayStatus::Ptr ss) {
+void MainWindow::onSegwayStatus(segwayrmp::SegwayStatus::Ptr &ss) {
     QString qss = QString::fromStdString(ss->str());
     emit segwayStatus(QString("Time Stamp:\n%1").arg(qss));
 }
@@ -246,10 +248,23 @@ void MainWindow::onConnectClicked() {
             } else if (this->interface_type_ == segwayrmp::serial) {
                 rmp_->configureSerial(ui->connection_id->currentText().toStdString());
             }
-            rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", _1));
-            rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", _1));
-            rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", _1));
-            rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, _1));
+
+            //rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", _1 ));
+            boost::function<void(const std::string&)> farc = [this](auto&& xx) { return MainWindow::onSegwayLog("Error", xx); };
+            rmp_->setLogMsgCallback("error", farc);
+
+            //rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", std::placeholders::_1));
+            boost::function<void(const std::string&)> eta = [this](auto&& xx) { return MainWindow::onSegwayLog("Info", xx); };
+            rmp_->setLogMsgCallback("info", eta);
+
+            //rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", std::placeholders::_1));
+            boost::function<void(const std::string&)> baadermeinhof = [this](auto&& xx) { return MainWindow::onSegwayLog("Debug", xx); };
+            rmp_->setLogMsgCallback("debug", baadermeinhof);
+
+            //rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, std::placeholders::_1));
+            auto isis = [this](auto&& x) { return MainWindow::onSegwayStatus(x); };            
+            rmp_->setStatusCallback(isis);
+
             rmp_->connect();
             this->connected_ = true;
             ui->connect_button->setText("Disconnect");
@@ -318,7 +333,8 @@ void MainWindow::USBListUpdated() {
 }
 
 void MainWindow::updateUSBList() {
-    QtConcurrent::run(this, &MainWindow::updateUSBList_);
+    //QtConcurrent::run(this, &MainWindow::updateUSBList_);
+    QtConcurrent::run(&MainWindow::updateUSBList_, this);
 }
 
 void MainWindow::updateUSBList_() {
