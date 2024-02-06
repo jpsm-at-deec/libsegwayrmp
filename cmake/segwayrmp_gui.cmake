@@ -1,11 +1,24 @@
-find_package(Qt5Widgets QUIET)
-find_package(Qt5Concurrent QUIET)
+#find_package(Qt4 QUIET)
+find_package(Qt6Widgets QUIET)
+find_package(Qt6Concurrent QUIET)
 
-if(NOT Qt5Widgets_FOUND)
+#if(NOT QT4_FOUND)
+#  message("-- ")
+#  message("-- SegwayRMP GUI will not be built: Qt4 not found")
+#  message("-- ")
+#endif(NOT QT4_FOUND)
+
+if(NOT Qt6Widgets_FOUND)
   message("-- ")
-  message("-- SegwayRMP GUI will not be built: Qt5 not found")
+  message("-- SegwayRMP GUI will not be built: Qt6Widgets not found")
   message("-- ")
-endif(NOT Qt5Widgets_FOUND)
+endif(NOT Qt6Widgets_FOUND)
+
+if(NOT Qt6Concurrent_FOUND)
+  message("-- ")
+  message("-- SegwayRMP GUI will not be built: Qt6Concurrent not found")
+  message("-- ")
+endif(NOT Qt6Concurrent_FOUND)
 
 find_package(SDL QUIET)
 
@@ -15,7 +28,7 @@ if(NOT SDL_FOUND)
   message("-- ")
 endif(NOT SDL_FOUND)
 
-if(Qt5Widgets_FOUND AND SDL_FOUND)
+if(Qt6Widgets_FOUND AND Qt6Concurrent_FOUND AND SDL_FOUND)
   message("-- Building SegwayRMP GUI")
   #include(${QT_USE_FILE})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -32,15 +45,16 @@ if(Qt5Widgets_FOUND AND SDL_FOUND)
   )
   set(segwayrmp_gui_FORMS include/segwayrmp/gui/segwayrmp_gui.ui)
 
-  qt5_wrap_cpp(segwayrmp_gui_HDRS_MOC ${segwayrmp_gui_HDRS})
-  qt5_wrap_ui(segwayrmp_gui_FORMS_HDRS ${segwayrmp_gui_FORMS})
+  qt6_wrap_cpp(segwayrmp_gui_HDRS_MOC ${segwayrmp_gui_HDRS})
+  qt6_wrap_ui(segwayrmp_gui_FORMS_HDRS ${segwayrmp_gui_FORMS})
 
   add_executable(segwayrmp_gui
     ${segwayrmp_gui_SRCS}
     ${segwayrmp_gui_HDRS_MOC}
     ${segwayrmp_gui_FORMS_HDRS}
   )
+  
   target_link_libraries(segwayrmp_gui ${QT_LIBRARIES} ${SDL_LIBRARY} segwayrmp)
-  target_link_libraries(segwayrmp_gui Qt5::Concurrent)
-  target_link_libraries(segwayrmp_gui Qt5::Widgets)
-endif(Qt5Widgets_FOUND AND SDL_FOUND)
+  target_link_libraries(segwayrmp_gui Qt6::Concurrent)
+  target_link_libraries(segwayrmp_gui Qt6::Widgets)
+endif(Qt6Widgets_FOUND AND Qt6Concurrent_FOUND AND SDL_FOUND)
