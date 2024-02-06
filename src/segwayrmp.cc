@@ -12,6 +12,7 @@
 # include <sys/time.h>
 #endif
 
+//defaultSegwayStatusCallback(segwayrmp::SegwayStatus::Ptr &segway_status)
 inline void
 defaultSegwayStatusCallback(segwayrmp::SegwayStatus::Ptr segway_status)
 {
@@ -39,7 +40,6 @@ inline void defaultErrorMsgCallback(const std::string &msg)
 inline segwayrmp::SegwayTime defaultTimestampCallback()
 #ifndef WIN32
 //throw(segwayrmp::NoHighPerformanceTimersException)
-noexcept
 #endif
 {
   segwayrmp::SegwayTime st;
