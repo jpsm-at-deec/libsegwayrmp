@@ -45,8 +45,7 @@ target_link_libraries(segwayrmp ${SEGWAYRMP_LINK_LIBS})
 ## Build Examples
 
 set(SEGWAYRMP_EXAMPLE_SRCS examples/segwayrmp_example.cc)
-set(SEGWAYRMP_EXAMPLE_SRCS examples/segwayrmp_interactive_example.cc)
-
+set(SEGWAYRMP_EXAMPLE_SRCS examples/segwayrmp_small_example.cc)
 set(SEGWAYRMP_EXAMPLE_LINK_LIBS segwayrmp)
 include(cmake/segwayrmp_examples.cmake)
 
