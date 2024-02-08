@@ -248,6 +248,23 @@ void MainWindow::onConnectClicked() {
             } else if (this->interface_type_ == segwayrmp::serial) {
                 rmp_->configureSerial(ui->connection_id->currentText().toStdString());
             }
+            //rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", std::placeholders::_1));
+            //rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", std::placeholders::_1));
+            //rmp_->setLogMsgCallback("debug", boost::bind(&MainWindow::onSegwayLog, this, "Debug", std::placeholders::_1));
+            //rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, std::placeholders::_1));
+            //auto j = [](auto&& x) {
+            //    using type = std::decay_t<decltype(x)>;
+            //    MainWindow::onSegwayStatus(&this, std::forward<type>(x));
+            //};
+            //rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, _1));
+
+            //rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", std::placeholders::_1));
+            //const std::string pkk = std::string("Error");
+            
+            //auto& _1 = std::placeholders::_1;
+            //auto farc = boost::bind(&MainWindow::onSegwayLog, this, "Error", _1);
+            
+
 
             //rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", _1 ));
             boost::function<void(const std::string&)> farc = [this](auto&& xx) { return MainWindow::onSegwayLog("Error", xx); };
@@ -264,6 +281,7 @@ void MainWindow::onConnectClicked() {
             //rmp_->setStatusCallback(boost::bind(&MainWindow::onSegwayStatus, this, std::placeholders::_1));
             auto isis = [this](auto&& x) { return MainWindow::onSegwayStatus(x); };            
             rmp_->setStatusCallback(isis);
+
 
             rmp_->connect();
             this->connected_ = true;
