@@ -1,5 +1,6 @@
 #include "segwayrmp/segwayrmp.h"
 #include "segwayrmp/gui/segwayrmp_gui.h"
+#include <iostream>
 #include "ui_segwayrmp_gui.h"
 #include "segwayrmp/impl/rmp_ftd2xx.h"
 
@@ -18,7 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     connected_(false),
-    interface_type_(segwayrmp::usb),
+    //interface_type_(segwayrmp::usb),
+    interface_type_(segwayrmp::serial),
     rmp_type_(segwayrmp::rmp200),
     joystick_(0),
     running_(true)
@@ -246,7 +248,14 @@ void MainWindow::onConnectClicked() {
             if (this->interface_type_ == segwayrmp::usb) {
                 rmp_->configureUSBByIndex(ui->connection_id->currentIndex());
             } else if (this->interface_type_ == segwayrmp::serial) {
-                rmp_->configureSerial(ui->connection_id->currentText().toStdString());
+                std::cout << "wally 2\n";
+                //rmp_->configureSerial(ui->connection_id->currentText().toStdString());
+                //rmp_->configureSerial(QString("/dev/ttyUSB0").toStdString());
+                ui->connection_id->setEditable(true);
+                ui->connection_id->clear();
+                ui->connection_id->addItem(QString("/dev/ttyUSB0"));
+                //rmp_->configureSerial(ui->connection_id->currentText().toStdString());
+                rmp_->configureSerial(QString("/dev/ttyUSB0").toStdString());
             }
             //rmp_->setLogMsgCallback("error", boost::bind(&MainWindow::onSegwayLog, this, "Error", std::placeholders::_1));
             //rmp_->setLogMsgCallback("info", boost::bind(&MainWindow::onSegwayLog, this, "Info", std::placeholders::_1));
@@ -282,7 +291,7 @@ void MainWindow::onConnectClicked() {
             auto isis = [this](auto&& x) { return MainWindow::onSegwayStatus(x); };            
             rmp_->setStatusCallback(isis);
 
-
+            std::cout << "wally\n";
             rmp_->connect();
             this->connected_ = true;
             ui->connect_button->setText("Disconnect");
@@ -364,7 +373,8 @@ void MainWindow::updateUSBList_() {
         this->usb_devices_.push_back("No devices detected.");
     }
     for (it = devices.begin(); it != devices.end(); it++) {
-        QString line = QString("%1 : %2 - %3").arg(QString::number(i), QString(it->Description), QString(it->SerialNumber));
+        //QString line = QString("%1 : %2 - %3").arg(QString::number(i), QString(it->Description), QString(it->SerialNumber));
+        QString line = QString("/dev/ttyUSB0");
         this->usb_devices_.push_back(line);
     }
     emit USBUpdateComplete();
