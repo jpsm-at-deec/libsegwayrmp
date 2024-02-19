@@ -1,6 +1,6 @@
 # Find Serial if support requested
 if(SEGWAYRMP_USE_SERIAL)
-  find_package(serial QUIET)
+  find_package(serial PATHS /tmp/usr/local/)
 
   set(SEGWAYRMP_USE_SERIAL FALSE)
   if(serial_FOUND)
