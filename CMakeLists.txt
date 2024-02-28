@@ -57,4 +57,4 @@ include(cmake/segwayrmp_tests.cmake)
 
 ## Setup Install/Uninstall Targets
 
-include(cmake/segwayrmp_targets.cmake)
+#include(cmake/segwayrmp_targets.cmake)
